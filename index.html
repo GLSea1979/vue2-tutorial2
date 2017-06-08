@@ -29,10 +29,10 @@
             <div class="form-group">
               <input class="form-control" placeholder="Date" v-model="event.date">
             </div>
-            <button class="btn btn-primary" v-on="click: addEvent">Submit</button>
+            <button class="btn btn-primary" v-on:"click: addEvent">Submit</button>
           </div>
           <div class="list-group">
-            <a href="#" class="list-group-item" v-repeat="event in events">
+            <a href="#" class="list-group-item" v-for="event in events">
               <h4 class="list-group-item-heading">
                 <i class="glyphicon glyphicon-bullhorn"></i>
                 {{ event.name }}
@@ -45,7 +45,7 @@
 
               <p class="list-group-item-text" v-if="event.description">{{ event.description }}</p>
 
-              <button class="btn btn-xs btn-danger" v-on="click: deleteEvent($index)">Delete</button>
+              <button class="btn btn-xs btn-danger" v-on:"click: deleteEvent($index)"></button>
             </a>
           </div>
         </div>

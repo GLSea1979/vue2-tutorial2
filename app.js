@@ -4,7 +4,7 @@ new Vue({
   el: '#events',
   // here we can register any values that hold data for the app
   data: {
-    event: { name: '', description '', date: ''},
+    event: { name: '', description: '', date: ''},
     events: []
   },
   // anything within the ready function will run when the app loads
