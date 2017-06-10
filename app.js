@@ -1,19 +1,20 @@
-'use strict';
-
+console.log('hi');
 new Vue({
   el: '#events',
   // here we can register any values that hold data for the app
   data: {
-    event: { name: '', description: '', date: ''},
+    event: {name: '', description: '', date: ''},
     events: []
   },
   // anything within the ready function will run when the app loads
-  ready: function() {
+  mounted: function() {
+    console.log('nothing');
     this.fetchEvents();
   },
   // methods we want to use in our app are registered here
   methods: {
-    fetchEvents: function() {
+    fetchEvents: () => {
+      var vm = this;
       var events = [
         {
           id: 1,
@@ -40,6 +41,7 @@ new Vue({
     },
     // adds an event to the existing events array
     addEvent: function() {
+      console.log('inside');
       if(this.event.name) {
         this.events.push(this.event);
         this.event = { name: '', description: '', date: ''};
